@@ -30,7 +30,8 @@ class Isotope {
 	double eff;
 	double TimeSinceEOS;
 	double EOSBq;
-	bool useeff;
+	string useeff;
+	string usecur;
 	
 	double contamination;
 	double activity;
@@ -39,7 +40,7 @@ class Isotope {
 	
   public:
   	Isotope ();
-    void set_values (string,double,double,double,double,bool);
+    void set_values (string,double,double,double,double,string,string);
     void print_values();
     string get_name() {return name;}
     double get_pol() {return EOSAct;}
@@ -59,21 +60,36 @@ Isotope::Isotope()
 
 void Isotope::calulate_values()
 {
-	realAct = contamination / eff;
+	if (useeff == "1")
+	{
+		realAct = contamination / eff;
+	}
+	else
+	{
+		realAct = contamination;
+	}
 	EOSAct = realAct * exp(TimeSinceEOS * (log(2)/halflife));	
 }
 
 void Isotope::set_contamination(double inconta) {
-	//TODO: Check if Use_Currie = True, otherwise don't multiply by 37
-	contamination = inconta*37;
+	if (usecur == "1")
+	{
+		contamination = inconta*37;
+	}
+	else
+	{
+		contamination = inconta;
+	}
+	
 }
-void Isotope::set_values (string inname, double inhalflife, double inTimeSinceEOS, double inEOSBq, double ineff, bool inuseeff) {
+void Isotope::set_values (string inname, double inhalflife, double inTimeSinceEOS, double inEOSBq, double ineff, string inuseeff, string inusecur) {
   name = inname;
   halflife = inhalflife;
   TimeSinceEOS = inTimeSinceEOS;
   EOSBq = inEOSBq;
   eff = ineff;
   useeff = inuseeff;
+  usecur = inusecur;
 }
 
 void Isotope::print_values() {
@@ -100,18 +116,18 @@ int main(int argc, char *argv[])
     string Use_Curie = argv[4];
     string Use_Eff = argv[5];
 
-	/*
+	
 	if (Use_Curie == "1")
 	{
-		cout << "Use_Curie er " << Use_Curie << endl;
+		cout << "Use_Curie is " << Use_Curie << endl;
 	
 	}
 	
 	if (Use_Eff == "1")
 	{
-		cout << "Use_Eff er " << Use_Eff << endl;
+		cout << "Use_Eff is " << Use_Eff << endl;
 	}
-	*/	
+		
 	
 	//To count how many isotopes we should look for, we loop through the isotopes.txt file to find number of lines.
 	//which mean numberoflines = number of isotope objects to create
@@ -169,7 +185,7 @@ int main(int argc, char *argv[])
             cout << "Isotope:" << readisotope << endl;
             cout << "Halftime:" << readhalftime << endl;
             cout << "Effectivity" << readeff << endl;
-			isotopes[i].set_values(readisotope,readhalftime,std::stod(argv[2]),std::stod(argv[3]),readeff,1);
+			isotopes[i].set_values(readisotope,readhalftime,std::stod(argv[2]),std::stod(argv[3]),readeff,argv[5],argv[4]);
 			i++;
 
         }
@@ -307,19 +323,23 @@ Below: Number of arguments and print them to screen
 		resultfile << "Sum of polution: " << sum_of_pol << endl;
     	resultfile << "Polution at EOS: " << pol_at_EOS << endl;
 	 	resultfile << "Polution at Expire: " << pol_at_EXPIRE << endl;
+	 	resultfile << "" << endl;
+		resultfile << "Abbreviations used:" << endl;
+		resultfile << "CaMT = Contamination at Measurement Time" << endl;
+		resultfile << "ECC = Effiency Corrected Contamination" << endl;
+		resultfile << "PaEOS = Polution at EOS" << endl;
+		resultfile << endl;
+		
+		resultfile.precision(4);
+		resultfile << scientific;
+		resultfile << "Overview of contaminations" << endl;
+		resultfile << "Isotope\t Half-Life[hours]\tEfficiency\t\tCaMT [Bq]\t\tECC[Bq]\t\t\tPaEOS[Bq]" << endl;
     	i=0;
 		while (i<number_of_lines)
 		{
-			resultfile << "******************************************************** " << endl;
-			resultfile << "For isotope: " << isotopes[i].get_name() << endl;
-			resultfile << "******************************************************** " << endl;
-			resultfile << "Used halflife: [hours] " << isotopes[i].get_halflife() << endl;
-			resultfile << "Used efficiency: " << isotopes[i].get_eff() << endl;
-			resultfile << "Contamination at measurement time: [Bq] " << isotopes[i].get_contamination() << endl;
-			resultfile << "Effiency corrected contamination: [Bq] " << isotopes[i].get_realAct() << endl;
-			resultfile << "Polution at EOS: [Bq] " << isotopes[i].get_pol() << endl;
+			
+			resultfile << isotopes[i].get_name() << "\t " << isotopes[i].get_halflife() << "\t\t" << isotopes[i].get_eff() << "\t\t" << isotopes[i].get_contamination() << "\t\t" << isotopes[i].get_realAct() << "\t\t" << isotopes[i].get_pol() << endl;
 			i++;
-			resultfile << "  " << endl;
 		}
     	resultfile.close();
   	 } 
