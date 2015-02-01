@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1418722299 source:c:\gammalyser\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<config4cpp/Configuration.h>
+

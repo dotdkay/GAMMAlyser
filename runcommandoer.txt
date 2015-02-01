@@ -1,0 +1,8 @@
+For export.txt:
+GAMMAlyser.exe c:\kemi\export.txt 99.81 36900000000 1 1 isotopes-18F.txt
+
+For export2.txt:
+GAMMAlyser.exe c:\kemi\export_2.txt 77.73 209100000000 1 1 isotopes-18F.txt
+
+For export3.txt:
+GAMMAlyser.exe c:\kemi\export_3.txt 54.06 209600000000 1 1 isotopes-18F.txt
