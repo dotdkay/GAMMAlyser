@@ -1,0 +1,3 @@
+In Dev-C++ do the following to enable C++11 standard for compiling:
+1. Navigate to: Tools->Compiler Options->Settings->Code Generation.
+2. In Language Standard (-std) select: ISO C++11
