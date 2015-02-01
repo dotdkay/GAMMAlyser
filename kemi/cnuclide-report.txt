@@ -1,0 +1,8 @@
+<pre>
+Produktion <font size="7" color="green">GODKENDT</font>
+Time since EOS [hours]: 99.81
+Bq at EOS: 3.69e+010
+Sum of polution: 20.3239
+Polution at EOS: 5.50782e-010
+Polution at Expire: 1.128e-006
+</pre>

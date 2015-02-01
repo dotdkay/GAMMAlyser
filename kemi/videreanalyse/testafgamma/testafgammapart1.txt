@@ -1,0 +1,17 @@
+<pre>
+Initials: CM
+Date: 31-01-2015
+Batch-nr: 150129-1
+EOS: 20150129080000
+EOS Activity: 147
+
+<img src="c:\kemi\testafgamma.jpg" alt="">
+
+*************************************************************************
+*****            AUTOMATIC GAMMA ACQUISITION REPORT                 *****
+*************************************************************************
+Acquisition Started             : 31-01-15 13:05:32
+Live Time                       :      300.0 seconds
+Real Time                       :      307.0 seconds
+Dead Time                       :   2.29 %
+Spectrum File Name              : HPGE                                      

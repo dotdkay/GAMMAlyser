@@ -1,0 +1,73 @@
+Produktion <font size="7" color="green">GODKENDT</font>
+
+Time since EOS [hours]: 99.81
+Total activity of tracer in sample at EOS [Bq]:   3.69e+010
+Sum of contaminents in sample at EOS [Bq]:         20.3239
+Ratio of contaminents to tracer activity at           EOS: 5.50782e-010
+Ratio of contaminents to tracer activity at  1h after EOS: XXXX
+Ratio of contaminents to tracer activity at  5h after EOS: XXXX
+Ratio of contaminents to tracer activity at 10h after EOS: XXXX
+
+******************************************************** 
+For isotope: CO-56
+******************************************************** 
+Used halflife: [hours] 1854.2
+Used efficiency: 2.4
+Contamination at measurement time: [Bq] 8.362
+Effiency corrected contamination: [Bq] 3.48417
+Polution at EOS: [Bq] 3.61662
+  
+******************************************************** 
+For isotope: TC-95
+******************************************************** 
+Used halflife: [hours] 20
+Used efficiency: 2.35
+Contamination at measurement time: [Bq] 0
+Effiency corrected contamination: [Bq] 0
+Polution at EOS: [Bq] 0
+  
+******************************************************** 
+For isotope: TC-96
+******************************************************** 
+Used halflife: [hours] 103.2
+Used efficiency: 2.4
+Contamination at measurement time: [Bq] 8.954
+Effiency corrected contamination: [Bq] 3.73083
+Polution at EOS: [Bq] 7.29369
+  
+******************************************************** 
+For isotope: RE-182
+******************************************************** 
+Used halflife: [hours] 13
+Used efficiency: 2.57
+Contamination at measurement time: [Bq] 0
+Effiency corrected contamination: [Bq] 0
+Polution at EOS: [Bq] 0
+  
+******************************************************** 
+For isotope: RE-183
+******************************************************** 
+Used halflife: [hours] 1704
+Used efficiency: 1.65
+Contamination at measurement time: [Bq] 7.141
+Effiency corrected contamination: [Bq] 4.32788
+Polution at EOS: [Bq] 4.50721
+  
+******************************************************** 
+For isotope: RE-184
+******************************************************** 
+Used halflife: [hours] 912
+Used efficiency: 2.4
+Contamination at measurement time: [Bq] 10.915
+Effiency corrected contamination: [Bq] 4.54792
+Polution at EOS: [Bq] 4.90634
+  
+******************************************************** 
+For isotope: RE-186
+******************************************************** 
+Used halflife: [hours] 89.3
+Used efficiency: 1.45
+Contamination at measurement time: [Bq] 0
+Effiency corrected contamination: [Bq] 0
+Polution at EOS: [Bq] 0
+  

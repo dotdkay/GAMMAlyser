@@ -1,0 +1,21 @@
+Produktion <font size="7" color="green">GODKENDT</font>
+Time since EOS [hours]: 99.81
+Bq at EOS: 3.69e+010
+Sum of polution: 20.3239
+Polution at EOS: 5.50782e-010
+Polution at Expire: 1.128e-006
+
+Abbreviations used:
+CaMT = Contamination at Measurement Time
+ECC = Effiency Corrected Contamination
+PaEOS = Polution at EOS
+
+Overview of contaminations
+Isotope	 Half-Life[hours]	Efficiency		CaMT [Bq]		ECC[Bq]			PaEOS[Bq]
+CO-56	 1.8542e+003		2.4000e+000		8.3620e+000		3.4842e+000		3.6166e+000
+TC-95	 2.0000e+001		2.3500e+000		0.0000e+000		0.0000e+000		0.0000e+000
+TC-96	 1.0320e+002		2.4000e+000		8.9540e+000		3.7308e+000		7.2937e+000
+RE-182	 1.3000e+001		2.5700e+000		0.0000e+000		0.0000e+000		0.0000e+000
+RE-183	 1.7040e+003		1.6500e+000		7.1410e+000		4.3279e+000		4.5072e+000
+RE-184	 9.1200e+002		2.4000e+000		1.0915e+001		4.5479e+000		4.9063e+000
+RE-186	 8.9300e+001		1.4500e+000		0.0000e+000		0.0000e+000		0.0000e+000

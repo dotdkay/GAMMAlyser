@@ -1,0 +1,29 @@
+Acquisition Started             : 11-09-13 15:51:11   
+Live Time                       :    43200.0 seconds
+Real Time                       :    43508.2 seconds
+Dead Time                       :   0.71 %
+Spectrum File Name              : C:\GENIE2K\CAMFILES\Casper\kopi-fra-jj\18F
+
+                 Nuclide        Wt mean       Wt mean
+       Nuclide     Id           Activity      Activity %    Action  Action
+       Name     Confidence       (nCi)       Uncertainty    Level1  Level2
+
+       CR-51      0.986      9.5251635E+01        7.06       0.00    0.00
+       MN-52      0.924      1.8660350E+02        1.52       0.00    0.00
+       Mn-54      0.956      4.3419236E+00        4.83       0.00    0.00
+       CO-56      0.923      3.8500000E-01        1.53       0.00    0.00
+       CO-57      0.993      1.9539546E+01        4.39       0.00    0.00
+       NI-57      0.938      1.9257748E+01        3.95       0.00    0.00
+       CO-58      0.960      3.6328089E+02        2.96       0.00    0.00
+       TC-95x     0.854      4.5700000E-01        3.37       0.00    0.00
+       TC-96x     0.854      1.1200000E+00        3.37       0.00    0.00
+       RE-182     0.854      2.2500000E+00        3.37       0.00    0.00
+       RE-183     0.854      6.4800000E-01        3.37       0.00    0.00
+       RE-184     0.854      1.0200000E+00        3.37       0.00    0.00
+   X   RE-186     0.360      8.8200000E-01        3.37       0.00    0.00
+       Peak   Energy         Peak Size in       Peak CPS     Activity (nCi)
+        No.   (keV)        Counts per Second  % Uncertainty  (at 100% yield)
+
+     F   1    11.25           4.85533E-01          1.59        4.62442E+08
+     F   7   511.72           9.56717E+00          0.45        1.14399E+02
+      m 25  1680.99           3.12838E-02          7.24        1.14486E+00

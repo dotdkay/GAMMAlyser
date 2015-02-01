@@ -1,0 +1,268 @@
+*************************************************************************
+*****    W H O L E   B O D Y  C O U N T I N G   A N A L Y S I S     *****
+*************************************************************************
+
+
+In-vivo Report Generated On     : 31-01-15 13:29:18   
+Report Template Last Modified   :  8-14-95
+
+Subject Name/Title              :                                 
+Identification Number           :                 
+Employer, Job Code              :                 ,                 
+Ht, Wt, Gender, Birth Date      :   0.0   ,   0.0   ,         ,         
+CWT                             :  0.0 (cm)
+
+Count Type                      :                                 
+Automatic Count?, Questionable? :                 ,                 
+Count Reason, Frequency         :                 ,                 
+Comment: Proever til vand bassin                                         
+
+Facility                        :                                 
+Counter                         :                                 
+Arrangement                     :                                 
+Detector Group Analyzed         :                                 
+
+Identification Energy Tolerance :    2.000 keV
+
+Intake Date                     :                     
+Reference Date                  :                     
+Acquisition Started             : 10-03-14 14:44:27   
+Live Time                       :    70129.1 seconds
+Real Time                       :    70134.4 seconds
+
+Dead Time                       :   0.01 %
+
+Spectrum File Name              : C:\GENIE2K\CAMFILES\Jesper\FDGF140306-1.CN
+Energy Calibration Done On      : 13-10-13 15:57:29   
+Efficiency Calibration Done On  : 01-12-94 08:48:40   
+
+Operator Name                   :                         
+Reviewed by                     : Holger Jensen           
+
+
+*****      D E T E C T O R   C O U N T   R A T E   R E P O R T       *****
+
+        Detector Number     Detector Name     % Of Counts     CPS
+               1              HPGE                 0.0        0.0
+
+Count Rate Range (in channels) :     1 -  8192
+Peak Locate Analysis Report             31-01-15 13:29:18          Page  3
+
+**************************************************************************
+*****             P E A K    L O C A T E    R E P O R T              *****
+**************************************************************************
+
+Subject Name/Title              :                                 
+Identification Number           :                 
+Acquisition Started             : 10-03-14 14:44:27   
+Peak Locate Performed on        : 31-01-15 13:29:18   
+Peak Locate From Channel        :    10
+Peak Locate To Channel          :  1024
+Peak Search Sensitivity         :  10.00
+Peak Locate Library             : C:\GENIE2K\CAMFILES\HJJ\HJJ_lib.
+
+     Peak   Centroid    Centroid     Energy       Peak
+      No.    Channel   Uncertainty   (keV)    Significance
+
+       1      238.10      <NA>         58.93      <NA> 
+       2      269.89      <NA>         66.91      <NA> 
+       3      446.52      <NA>        111.18      <NA> 
+       4      651.70      <NA>        162.22      <NA> 
+       5     2050.08      <NA>        511.03      <NA> 
+       6     3121.85      <NA>        778.41      <NA> 
+       7     3178.50      <NA>        792.36      <NA> 
+       8     3259.63      <NA>        812.79      <NA> 
+       9     3396.96      <NA>        847.01      <NA> 
+      10     3409.50      <NA>        850.11      <NA> 
+      11     3623.73      <NA>        903.63      <NA> 
+      12     4966.53      <NA>       1238.50      <NA> 
+
+
+Errors quoted at  2.000 sigma
+Peak Analysis Report             31-01-15 13:29:19                 Page  4
+
+
+**************************************************************************
+*****           P E A K    A N A L Y S I S    R E P O R T            *****
+**************************************************************************
+
+
+Subject Name/Title              :                                 
+Identification Number           :                 
+Acquisition Started             : 10-03-14 14:44:27   
+Peak Analysis Performed on      : 31-01-15 13:29:18   
+Peak Analysis From Channel      :    30
+Peak Analysis To Channel        :  8192
+Peak Locate Library             : C:\GENIE2K\CAMFILES\HJJ\HJJ_lib.
+
+   Peak  ROI  ROI    Peak    Energy   Net Peak  % Area   Continuum Libry Num
+    No. start end  centroid   (keV)     Area    Uncert.    Counts   Fit  Iter
+
+F   1   226-  242   237.31    58.93  8.989E+02    8.59   1.022E+03  15.0   8
+F   2   264-  274   269.32    66.91  4.759E+02   14.69   8.369E+02   1.7   6
+F   3   441-  451   446.81   111.18  3.396E+02   18.70   7.164E+02   1.9   4
+F   4   646-  657   651.43   162.22  6.869E+02   10.42   6.000E+02   1.0   5
+F   5  2042- 2057  2049.88   511.03  1.085E+03    8.66   8.092E+02   1.0   4
+F   6  3113- 3130  3121.82   778.41  9.492E+02    7.13   1.532E+02   0.7   3
+F   7  3170- 3186  3177.76   792.36  3.581E+02   13.52   2.092E+02   1.0   4
+F   8  3251- 3268  3259.65   812.79  7.358E+02    7.96   9.936E+01   1.3   3
+ M  9  3388- 3417  3396.86   847.01  8.277E+02    7.58   1.232E+02   1.2   4
+ m 10  3388- 3417  3409.30   850.11  8.649E+02    7.55   1.486E+02   1.2   4
+F  11  3615- 3632  3623.84   903.63  4.633E+02   10.15   8.079E+01   1.0   4
+F  12  4957- 4976  4966.42  1238.50  3.887E+02   10.86   5.931E+01   0.7   4
+
+M = First peak in a multiplet region
+m = Other peak in a multiplet region
+F = Fitted singlet
+
+Errors quoted at  2.000 sigma
+Interference Corrected Activity Report      31-01-15 13:29:19      Page  5
+
+
+*************************************************************************
+*****   N U C L I D E   I D E N T I F I C A T I O N   R E P O R T   *****
+*************************************************************************
+
+Subject Name/Title              :                                 
+Identification Number           :                 
+Acquisition Started             : 10-03-14 14:44:27   
+Nuclide Library Used            : C:\GENIE2K\CAMFILES\Jesper\JJ opdateret.
+
+   ....................    IDENTIFIED NUCLIDES     ....................
+
+   Nuclide    Id       Energy   Yield     Activity        %       Action Action
+   Name    Confidence  (keV)     (%)       (nCi)      Uncertainty Level1 Level2
+
+   CO-56     0.694    733.72      0.19
+                      787.88      0.32
+                      846.76*    99.93   2.28669E-01       8.49
+                      977.48      1.43
+                      997.33      1.41
+                     1037.84     14.10
+                     1140.28      0.13
+                     1175.10      2.30
+                     1238.29*    68.40   2.22036E-01      11.38
+                     1335.56      0.13
+                     1360.21      4.32
+                     1442.75      0.17
+                     1771.35     15.50
+                     1810.77      0.63
+                     1963.71      0.72
+                     2015.18      3.18
+                     2034.76      8.13
+                     2113.11      0.38
+                     2212.92      0.42
+                     2276.36      0.12
+                     2598.46     17.40
+                     3009.60      0.84
+                     3201.95      3.03
+                     3253.42      7.60
+                     3273.00      1.81
+                     3451.15      0.90
+                     3547.93      0.20
+   TC-96x    0.871    314.27      2.43
+                      316.50      1.40
+                      434.71      0.75
+                      460.04      0.43
+                      535.78      0.41
+                      568.88      0.92
+                      591.30      0.11
+                      719.50      0.20
+                      721.50      0.12
+                      778.22*    99.76   2.42875E-01       8.27
+                      812.54*    82.00   2.38457E-01      13.22
+                      849.86*    98.00   2.44493E-01      11.76
+                     1091.30      1.10
+                     1126.85     15.20
+                     1200.17      0.37
+Interference Corrected Activity Report      31-01-15 13:29:19      Page  6
+
+
+   Nuclide    Id       Energy   Yield     Activity        %       Action Action
+   Name    Confidence  (keV)     (%)       (nCi)      Uncertainty Level1 Level2
+
+   RE-183    0.495     52.60      2.21
+                       57.98     34.50
+                       59.32*    59.90   2.82109E-01      62.56
+                       67.20*    25.50   2.46598E-01      41.08
+                       82.92      0.29
+                       84.71      0.97
+                       99.08      2.69
+                      107.93      2.17
+                      109.73*     2.87   7.81183E-01      20.47
+                      144.13      0.12
+                      160.53      0.59
+                      161.35      0.61
+                      162.33*    23.30   1.92856E-01      13.17
+                      192.65      0.26
+                      205.09      0.11
+                      208.81      2.95
+                      209.86      0.26
+                      244.27      0.41
+                      245.24      0.25
+                      246.06      1.31
+                      291.73      3.05
+                      313.02      0.41
+                      354.00      0.54
+   RE-184    0.643     57.98     25.40
+                       59.32*    44.20   3.82315E-01      62.53
+                       67.20*    18.80   3.34482E-01      41.01
+                      111.21*    17.10   1.31111E-01      21.61
+                      252.85      3.00
+                      539.22      0.33
+                      641.91      1.94
+                      769.78      0.67
+                      792.07*    37.50   2.47852E-01      15.31
+                      894.76     15.60
+                      903.28*    37.90   3.58223E-01      12.20
+                     1022.63      0.52
+                     1275.11      0.12
+                     1386.33      0.10
+
+       * = Energy line found in the spectrum.
+       @ = Energy line not used for Weighted Mean Activity
+       Energy tolerance used was    2.000 keV
+       Nuclide confidence index threshold =   0.30
+       Errors quoted at  2.000 sigma
+
+Interference Corrected Activity Report      31-01-15 13:29:19      Page  7
+
+
+*************************************************************************
+*****   I N T E R F E R E N C E   C O R R E C T E D   R E P O R T   *****
+*************************************************************************
+
+
+                 Nuclide        Wt mean       Wt mean
+       Nuclide     Id           Activity      Activity %    Action  Action
+       Name     Confidence       (nCi)       Uncertainty    Level1  Level2
+
+       CO-56      0.694      2.2620652E-01        6.81       0.00    0.00
+       TC-96x     0.871      2.4234469E-01        6.02       0.00    0.00
+       RE-183     0.495      1.7593155E-01       12.43       0.00    0.00
+       RE-184     0.643      1.9629783E-01        9.24       0.00    0.00
+
+
+       ? = nuclide is part of an undetermined solution
+       X = nuclide rejected by the interference analysis
+       @ = nuclide contains energy lines not used in Weighted Mean Activity
+
+       Errors quoted at  2.000 sigma
+
+
+   **********   U N I D E N T I F I E D   P E A K S   **********
+
+               Peak Locate Performed on:  31-01-15 13:29:18   
+               Peak Locate From Channel:     10
+               Peak Locate To Channel:     1024
+
+       Peak   Energy         Peak Size in       Peak CPS     Activity (nCi)
+        No.   (keV)        Counts per Second  % Uncertainty  (at 100% yield)
+
+     F   5   511.03           1.54699E-02          8.66        1.84732E-01
+
+       M = First peak in a multiplet region
+       m = Other peak in a multiplet region
+       F = Fitted singlet
+
+       Errors quoted at  2.000 sigma

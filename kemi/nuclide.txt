@@ -1,0 +1,28 @@
+EOS: 20141101135030
+Slut for maaling: 20141223001513
+Tid siden EOS(Timer): 1234
+
+Aktivitet i Bq: CO56 8.362000
+Reel aktivitet: ReCO56 3.484167
+Aktivitet ved EOS: ActCO56 3.616622
+
+Aktivitet i Bq: TC96 
+Reel aktivitet: ReTC96 3.730833
+Aktivitet ved EOS: ActTC96 7.293690
+
+Aktivitet i Bq: RE183 
+Reel aktivitet: ReRE183 4.327879
+Aktivitet ved EOS: ActRE183 4.507204
+
+Aktivitet i Bq: RE184 
+Reel aktivitet: ReRE184 4.547917
+Aktivitet ved EOS: ActRE184 4.906338
+
+Aktivitet i Bq: RE186 
+Reel aktivitet: ReRE186 
+Aktivitet ved EOS: ActRE186 
+sumofpollution: 20.323854
+UrenVedEOS: 0.0000000005507820 
+UrenVedUdlob: 0.0000011280014361 
+Produktion <font size="7" color="green">GODKENDT</font>
+		test

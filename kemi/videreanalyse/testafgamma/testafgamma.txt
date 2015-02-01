@@ -1,0 +1,211 @@
+*************************************************************************
+*****    W H O L E   B O D Y  C O U N T I N G   A N A L Y S I S     *****
+*************************************************************************
+
+
+In-vivo Report Generated On     : 31-01-15 13:11:12   
+Report Template Last Modified   :  8-14-95
+
+Subject Name/Title              :                                 
+Identification Number           :                 
+Employer, Job Code              :                 ,                 
+Ht, Wt, Gender, Birth Date      :   0.0   ,   0.0   ,         ,         
+CWT                             :  0.0 (cm)
+
+Count Type                      :                                 
+Automatic Count?, Questionable? :                 ,                 
+Count Reason, Frequency         :                 ,                 
+Comment: Proever til vand bassin                                         
+
+Facility                        :                                 
+Counter                         :                                 
+Arrangement                     :                                 
+Detector Group Analyzed         :                                 
+
+Identification Energy Tolerance :    2.000 keV
+
+Intake Date                     :                     
+Reference Date                  :                     
+Acquisition Started             : 31-01-15 13:05:32   
+Live Time                       :      300.0 seconds
+Real Time                       :      307.0 seconds
+
+Dead Time                       :   2.29 %
+
+Spectrum File Name              : HPGE                                      
+Energy Calibration Done On      : 13-10-13 15:57:29   
+Efficiency Calibration Done On  : 01-12-94 08:48:40   
+
+Operator Name                   :                         
+Reviewed by                     : Holger Jensen           
+
+
+*****      D E T E C T O R   C O U N T   R A T E   R E P O R T       *****
+
+        Detector Number     Detector Name     % Of Counts     CPS
+               1              HPGE                 0.0        0.0
+
+Count Rate Range (in channels) :     1 -  8192
+Peak Locate Analysis Report             31-01-15 13:11:12          Page  3
+
+**************************************************************************
+*****             P E A K    L O C A T E    R E P O R T              *****
+**************************************************************************
+
+Subject Name/Title              :                                 
+Identification Number           :                 
+Acquisition Started             : 31-01-15 13:05:32   
+Peak Locate Performed on        : 31-01-15 13:11:11   
+Peak Locate From Channel        :    10
+Peak Locate To Channel          :  1024
+Peak Search Sensitivity         :  10.00
+Peak Locate Library             : C:\GENIE2K\CAMFILES\HJJ\HJJ_lib.
+
+     Peak   Centroid    Centroid     Energy       Peak
+      No.    Channel   Uncertainty   (keV)    Significance
+
+       1      490.64      <NA>        122.11      <NA> 
+       2      983.83      <NA>        245.11      <NA> 
+       3     1383.30      <NA>        344.75      <NA> 
+       4     1477.37      <NA>        368.24      <NA> 
+       5     1651.43      <NA>        411.61      <NA> 
+       6     1783.09      <NA>        444.50      <NA> 
+       7     2763.88      <NA>        689.20      <NA> 
+       8     3126.40      <NA>        779.55      <NA> 
+       9     3481.08      <NA>        868.05      <NA> 
+      10     3868.70      <NA>        964.69      <NA> 
+      11     4033.25      <NA>       1005.51      <NA> 
+      12     4355.96      <NA>       1086.26      <NA> 
+      13     4371.86      <NA>       1090.17      <NA> 
+      14     4461.20      <NA>       1112.52      <NA> 
+      15     4866.05      <NA>       1213.35      <NA> 
+      16     5211.69      <NA>       1299.63      <NA> 
+      17     5648.27      <NA>       1408.58      <NA> 
+      18     5846.90      <NA>       1458.11      <NA> 
+
+
+Errors quoted at  2.000 sigma
+Peak Analysis Report             31-01-15 13:11:12                 Page  4
+
+
+**************************************************************************
+*****           P E A K    A N A L Y S I S    R E P O R T            *****
+**************************************************************************
+
+
+Subject Name/Title              :                                 
+Identification Number           :                 
+Acquisition Started             : 31-01-15 13:05:32   
+Peak Analysis Performed on      : 31-01-15 13:11:11   
+Peak Analysis From Channel      :    30
+Peak Analysis To Channel        :  8192
+Peak Locate Library             : C:\GENIE2K\CAMFILES\HJJ\HJJ_lib.
+
+   Peak  ROI  ROI    Peak    Energy   Net Peak  % Area   Continuum Libry Num
+    No. start end  centroid   (keV)     Area    Uncert.    Counts   Fit  Iter
+
+F   1   485-  496   490.61   122.11  4.139E+04    1.02   3.252E+03 101.7   3
+F   2   977-  989   983.77   245.11  8.822E+03    2.34   1.559E+03   4.6   3
+F   3  1376- 1389  1383.21   344.75  2.519E+04    1.31   1.636E+03   6.7   3
+F   4  1470- 1484  1477.38   368.24  8.264E+02    9.10   6.135E+02   1.0   3
+F   5  1644- 1658  1651.29   411.61  1.747E+03    5.77   7.268E+02   1.0   4
+F   6  1775- 1790  1783.14   444.50  2.499E+03    4.47   5.760E+02   1.0   3
+F   7  2755- 2771  2764.16   689.20  5.172E+02   12.26   4.931E+02   0.4   4
+F   8  3118- 3134  3126.40   779.55  6.629E+03    2.64   7.985E+02   1.2   3
+F   9  3472- 3489  3481.21   868.05  2.063E+03    4.92   4.404E+02   0.6   4
+F  10  3859- 3877  3868.67   964.69  6.412E+03    2.61   4.548E+02   1.3   3
+F  11  4024- 4042  4032.31  1005.51  4.066E+02   11.68   1.567E+02   0.9   5
+ M 12  4346- 4381  4356.06  1086.26  4.216E+03    3.23   3.513E+02   1.2   4
+ m 13  4346- 4381  4371.74  1090.17  7.358E+02    8.64   2.443E+02   1.2   4
+F  14  4452- 4470  4461.35  1112.52  5.421E+03    2.88   5.162E+02   0.8   3
+F  15  4856- 4875  4865.59  1213.35  4.801E+02   10.59   1.862E+02   1.0   4
+F  16  5202- 5221  5211.48  1299.63  5.921E+02    8.63   6.034E+01   1.3   4
+F  17  5638- 5658  5648.28  1408.58  7.053E+03    2.41   1.946E+02   2.1   3
+F  18  5836- 5856  5846.85  1458.11  1.597E+02   16.11   5.099E+00   0.6   3
+
+M = First peak in a multiplet region
+m = Other peak in a multiplet region
+F = Fitted singlet
+
+Errors quoted at  2.000 sigma
+Interference Corrected Activity Report      31-01-15 13:11:12      Page  5
+
+
+*************************************************************************
+*****   N U C L I D E   I D E N T I F I C A T I O N   R E P O R T   *****
+*************************************************************************
+
+Subject Name/Title              :                                 
+Identification Number           :                 
+Acquisition Started             : 31-01-15 13:05:32   
+Nuclide Library Used            : C:\GENIE2K\CAMFILES\Jesper\JJ opdateret.
+
+   ....................    IDENTIFIED NUCLIDES     ....................
+
+   Nuclide    Id       Energy   Yield     Activity        %       Action Action
+   Name    Confidence  (keV)     (%)       (nCi)      Uncertainty Level1 Level2
+
+   CO-57     0.826    122.06*    85.90   7.19535E+02       6.21     0.00   0.00
+                      136.47     10.33
+                      692.41      0.16
+
+       * = Energy line found in the spectrum.
+       @ = Energy line not used for Weighted Mean Activity
+       Energy tolerance used was    2.000 keV
+       Nuclide confidence index threshold =   0.30
+       Errors quoted at  2.000 sigma
+
+Interference Corrected Activity Report      31-01-15 13:11:12      Page  6
+
+
+*************************************************************************
+*****   I N T E R F E R E N C E   C O R R E C T E D   R E P O R T   *****
+*************************************************************************
+
+
+                 Nuclide        Wt mean       Wt mean
+       Nuclide     Id           Activity      Activity %    Action  Action
+       Name     Confidence       (nCi)       Uncertainty    Level1  Level2
+
+       CO-57      0.826      7.1953499E+02        6.21       0.00    0.00
+
+
+       ? = nuclide is part of an undetermined solution
+       X = nuclide rejected by the interference analysis
+       @ = nuclide contains energy lines not used in Weighted Mean Activity
+
+       Errors quoted at  2.000 sigma
+
+
+   **********   U N I D E N T I F I E D   P E A K S   **********
+
+               Peak Locate Performed on:  31-01-15 13:11:11   
+               Peak Locate From Channel:     10
+               Peak Locate To Channel:     1024
+
+       Peak   Energy         Peak Size in       Peak CPS     Activity (nCi)
+        No.   (keV)        Counts per Second  % Uncertainty  (at 100% yield)
+
+     F   2   245.11           2.94064E+01          2.34        1.74270E+02
+     F   3   344.75           8.39754E+01          1.31        6.79143E+02
+     F   4   368.24           2.75470E+00          9.10        2.37633E+01
+     F   5   411.61           5.82322E+00          5.77        5.60909E+01
+     F   6   444.50           8.33065E+00          4.47        8.66183E+01
+     F   7   689.20           1.72389E+00         12.26        2.75192E+01
+     F   8   779.55           2.20965E+01          2.64        3.96150E+02
+     F   9   868.05           6.87747E+00          4.92        1.36226E+02
+     F  10   964.69           2.13726E+01          2.61        4.66340E+02
+     F  11  1005.51           1.35533E+00         11.68        3.07101E+01
+      M 12  1086.26           1.40546E+01          3.23        3.41705E+02
+      m 13  1090.17           2.45266E+00          8.64        5.98237E+01
+     F  14  1112.52           1.80708E+01          2.88        4.48994E+02
+     F  15  1213.35           1.60042E+00         10.59        4.30399E+01
+     F  16  1299.63           1.97361E+00          8.63        5.65370E+01
+     F  17  1408.58           2.35105E+01          2.41        7.25888E+02
+     F  18  1458.11           5.32260E-01         16.11        1.69768E+01
+
+       M = First peak in a multiplet region
+       m = Other peak in a multiplet region
+       F = Fitted singlet
+
+       Errors quoted at  2.000 sigma

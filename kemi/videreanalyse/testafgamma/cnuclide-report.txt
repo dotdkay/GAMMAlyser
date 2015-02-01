@@ -1,0 +1,8 @@
+<pre>
+Produktion <font size="7" color="green">GODKENDT</font>
+Time since EOS [hours]: 53
+Bq at EOS: 147
+Sum of polution: 0
+Polution at EOS: 0
+Polution at Expire: 0
+</pre>
