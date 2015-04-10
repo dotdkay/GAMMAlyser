@@ -1,15 +1,6 @@
 /*
 Written by: Casper Madsen
-Compiled and developed in: Dev-C++ 5.8.3 with C++11 flag
-
-Ideas:
--Flag for use of eff calibration
-
--Flag for use of Ci or Bq
-
--Isotopes.txt
-
-
+Compiled and developed in: Dev-C++ 5.8.3 with ISO C++11 flag
 */
 
 #include <iostream>
@@ -313,16 +304,19 @@ Below: Number of arguments and print them to screen
     	if (pol_at_EXPIRE < 0.001)
     	{
     		resultfile << "Produktion <font size=\"7\" color=\"green\">GODKENDT</font>" << endl;
+    		resultfile << "Forurening udgør mindre end 0.001 af det endelige produkt efter 11 halveringer" << endl;
 		}
 		else
 		{
 			resultfile << "Produktion <font size=\"7\" color=\"red\">IKKE GODKENDT</font>" << endl;
 		}
     	resultfile << "Time since EOS [hours]: " << argv[2] << endl;
-    	resultfile << "Bq at EOS: " << std::stod(argv[3]) << endl;
-		resultfile << "Sum of polution: " << sum_of_pol << endl;
-    	resultfile << "Polution at EOS: " << pol_at_EOS << endl;
-	 	resultfile << "Polution at Expire: " << pol_at_EXPIRE << endl;
+		resultfile.precision(4);
+		resultfile << scientific;
+    	resultfile << "Activity at EOS [Bq]:" << std::stod(argv[3]) << endl;
+		resultfile << "Sum of polution [Bq]: " << sum_of_pol << endl;
+    	resultfile << "Polution at EOS [Ratio]: " << pol_at_EOS << endl;
+	 	resultfile << "Polution at Expire [Ratio]: " << pol_at_EXPIRE << endl;
 	 	resultfile << "" << endl;
 		resultfile << "Abbreviations used:" << endl;
 		resultfile << "CaMT = Contamination at Measurement Time" << endl;
@@ -330,8 +324,6 @@ Below: Number of arguments and print them to screen
 		resultfile << "PaEOS = Polution at EOS" << endl;
 		resultfile << endl;
 		
-		resultfile.precision(4);
-		resultfile << scientific;
 		resultfile << "Overview of contaminations" << endl;
 		resultfile << "Isotope\t Half-Life[hours]\tEfficiency\t\tCaMT [Bq]\t\tECC[Bq]\t\t\tPaEOS[Bq]" << endl;
     	i=0;
@@ -352,16 +344,20 @@ Below: Number of arguments and print them to screen
 		if (pol_at_EXPIRE < 0.001)
     	{
     		reportfile << "Produktion <font size=\"7\" color=\"green\">GODKENDT</font>" << endl;
+    		reportfile << "Forurening udgør mindre end 0.001 af det endelige produkt efter 11 halveringer" << endl;
 		}
 		else
 		{
 			reportfile << "Produktion <font size=\"7\" color=\"red\">IKKE GODKENDT</font>" << endl;
+			reportfile << "Forurening udgør mere end 0.001 af det endelige produkt efter 11 halveringer" << endl;
 		}
     	reportfile << "Time since EOS [hours]: " << argv[2] << endl;
-    	reportfile << "Bq at EOS: " << std::stod(argv[3]) << endl;
-		reportfile << "Sum of polution: " << sum_of_pol << endl;
-    	reportfile << "Polution at EOS: " << pol_at_EOS << endl;
-	 	reportfile << "Polution at Expire: " << pol_at_EXPIRE << endl;
+    	reportfile.precision(2);
+		reportfile << scientific;
+		reportfile << "Activity at EOS [Bq]: " << std::stod(argv[3]) << endl;
+		reportfile << "Sum of polution [Bq]: " << sum_of_pol << endl;
+    	reportfile << "Polution at EOS [Ratio]: " << pol_at_EOS << endl;
+	 	reportfile << "Polution at Expire [Ratio]: " << pol_at_EXPIRE << endl;
     	
     	reportfile << "</pre>" << endl;
     	resultfile.close();
