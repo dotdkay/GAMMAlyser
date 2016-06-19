@@ -1,6 +1,6 @@
 /*
 Written by: Casper Madsen
-Compiled and developed in: Dev-C++ 5.8.3 with ISO C++11 flag
+Compiled and developed in: Dev-C++ 5.8.3 with ISO C++11 flag for a 32-bit computer
 */
 
 #include <iostream>
@@ -11,7 +11,19 @@ Compiled and developed in: Dev-C++ 5.8.3 with ISO C++11 flag
 
 using namespace std;
 
+/*
+[1] - file to read for analysis
 
+[2] - Time since End Of Synthesis in hours
+
+[3] - Activity in Bq at End of Synthesis
+
+[4] - Use currie as a unit for the input file. 1 for yes, 0 for no. The standard format is currie now
+
+[5] - Use effectivity calibration. This is used for later recalibration of the results, since there's some areas of the detector that might give wrong results.
+
+[6] - Which isotopes to look for in the result file
+*/
 //run: GAMMAlyser filetoread TimeSinceEOS EOSBq   Use_Currie Use_Eff
 //GAMMAlyser.exe c:\kemi\export.txt 99.81 36900000000   1    1    isotopes-18F.txt    
 //argument         [1]               [2]      [3]      [4]  [5]         [6] 
@@ -341,23 +353,28 @@ Below: Number of arguments and print them to screen
  	 if (reportfile.is_open())
   	 {
     	reportfile << "<pre>" << endl;
+    	reportfile << "<font size=\"7\" color=\"black\">Resultat data</font>" << endl;
+    	reportfile << "Tid siden EOS: 		" << argv[2] << " timer";
+		reportfile.precision(2);
+		reportfile << scientific;
+		reportfile <<  "		Sum af urenheder [Bq]: " << scientific <<  sum_of_pol << endl;
+    	/*reportfile.precision(2);
+		reportfile << scientific;*/
+		reportfile << "Aktivitet ved EOS [Bq]: " << std::stod(argv[3]) << "\n \n" << endl;
+		reportfile << "Urenheder udgør af produktet:	" << pol_at_EOS*100 << "% EOS	|	" << pol_at_EXPIRE*100 << "% ved produktets udløb" << endl;
+		reportfile << "Den nuklidiske renhed af produktet er:	" << 100- pol_at_EOS*100 << "% EOS	|	" << 100-pol_at_EXPIRE*100 << "% ved produktets udløb\n \n" << endl;
+    	reportfile << "<b>Kravet for godkendelse er en nuklidisk renhed større end 99.9 %</b>" << endl;
 		if (pol_at_EXPIRE < 0.001)
     	{
-    		reportfile << "Produktion <font size=\"7\" color=\"green\">GODKENDT</font>" << endl;
-    		reportfile << "Forurening udgør mindre end 0.001 af det endelige produkt efter 11 halveringer" << endl;
+    		reportfile << "Denne prøve er <font size=\"7\" color=\"green\">GODKENDT</font>" << endl;
+    		//reportfile << "Forurening udgør mindre end 0.001 af det endelige produkt efter 11 halveringer" << endl;
 		}
 		else
 		{
-			reportfile << "Produktion <font size=\"7\" color=\"red\">IKKE GODKENDT</font>" << endl;
-			reportfile << "Forurening udgør mere end 0.001 af det endelige produkt efter 11 halveringer" << endl;
+			reportfile << "Denne prøve er <font size=\"7\" color=\"red\">IKKE GODKENDT</font>" << endl;
+			//reportfile << "Forurening udgør mere end 0.001 af det endelige produkt efter 11 halveringer" << endl;
 		}
-    	reportfile << "Time since EOS [hours]: " << argv[2] << endl;
-    	reportfile.precision(2);
-		reportfile << scientific;
-		reportfile << "Activity at EOS [Bq]: " << std::stod(argv[3]) << endl;
-		reportfile << "Sum of polution [Bq]: " << sum_of_pol << endl;
-    	reportfile << "Polution at EOS [Ratio]: " << pol_at_EOS << endl;
-	 	reportfile << "Polution at Expire [Ratio]: " << pol_at_EXPIRE << endl;
+
     	
     	reportfile << "</pre>" << endl;
     	resultfile.close();
