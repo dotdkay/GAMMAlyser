@@ -361,9 +361,11 @@ Below: Number of arguments and print them to screen
     	/*reportfile.precision(2);
 		reportfile << scientific;*/
 		reportfile << "Aktivitet ved EOS [Bq]: " << std::stod(argv[3]) << "\n \n" << endl;
-		reportfile << "Urenheder udgør af produktet:	" << pol_at_EOS*100 << "% EOS	|	" << pol_at_EXPIRE*100 << "% ved produktets udløb" << endl;
-		reportfile << "Den nuklidiske renhed af produktet er:	" << 100- pol_at_EOS*100 << "% EOS	|	" << 100-pol_at_EXPIRE*100 << "% ved produktets udløb\n \n" << endl;
-    	reportfile << "<b>Kravet for godkendelse er en nuklidisk renhed større end 99.9 %</b>" << endl;
+		reportfile << "Urenheder udgør af produktet:        	" << pol_at_EOS*100 << "% ved EOS" << endl;
+		reportfile << "                                     	" << pol_at_EXPIRE*100 << "% ved produktets udløb \n \n" << endl;
+		reportfile << "Den nuklidiske renhed af produktet er:	" << 100- pol_at_EOS*100 << "% ved EOS" << endl;
+		reportfile << "                                      	" << 100-pol_at_EXPIRE*100 << "% ved produktets udløb\n \n" << endl;
+    	reportfile << "<b>Kravet for godkendelse er en nuklidisk renhed større end 99.9 %</b> \n" << endl;
 		if (pol_at_EXPIRE < 0.001)
     	{
     		reportfile << "Denne prøve er <font size=\"7\" color=\"green\">GODKENDT</font>" << endl;
@@ -374,8 +376,10 @@ Below: Number of arguments and print them to screen
 			reportfile << "Denne prøve er <font size=\"7\" color=\"red\">IKKE GODKENDT</font>" << endl;
 			//reportfile << "Forurening udgør mere end 0.001 af det endelige produkt efter 11 halveringer" << endl;
 		}
-
-    	
+		reportfile << "\n" << endl;
+		reportfile << "Analysen er set igennem og godkendt af: _________		dato: __________________________" << endl;
+    	reportfile << "\n" << endl;
+		reportfile << "<hr>" << endl;
     	reportfile << "</pre>" << endl;
     	resultfile.close();
   	 } 
