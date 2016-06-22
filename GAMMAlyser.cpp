@@ -23,10 +23,14 @@ using namespace std;
 [5] - Use effectivity calibration. This is used for later recalibration of the results, since there's some areas of the detector that might give wrong results.
 
 [6] - Which isotopes to look for in the result file
+
+[7] - Amount of half-lifes for the product, used for calculation of expire of product
+
+[8] - Half-life in minutes for the isotope. This is only used for calculation of products expire time
 */
 //run: GAMMAlyser filetoread TimeSinceEOS EOSBq   Use_Currie Use_Eff
-//GAMMAlyser.exe c:\kemi\export.txt 99.81 36900000000   1    1    isotopes-18F.txt    
-//argument         [1]               [2]      [3]      [4]  [5]         [6] 
+//GAMMAlyser.exe c:\kemi\export.txt 99.81 36900000000   1    1    isotopes-18F.txt	6  		109.7  
+//argument         [1]               [2]      [3]      [4]  [5]         [6] 		[7]		[8]
 class Isotope {
     string name;
     double halflife;
@@ -198,8 +202,8 @@ int main(int argc, char *argv[])
 
     else cout << "Unable to Isotope file" << endl;
 
-/*
-Below: Number of arguments and print them to screen
+
+//Below: Number of arguments and print them to screen
     cout << "Use_Curie" << Use_Curie << "; Use_Eff=" << Use_Eff << endl;
 
 
@@ -211,7 +215,7 @@ Below: Number of arguments and print them to screen
     {
         cout << nArg << " " << argv[nArg] << endl;
     }
-*/
+
 
 
     string line; //used for reading in lines
@@ -290,7 +294,7 @@ Below: Number of arguments and print them to screen
 	
 	cout << "Sum of polution: " << sum_of_pol << endl;
 	double pol_at_EOS = sum_of_pol/std::stod(argv[3]);
-	double pol_at_EXPIRE = sum_of_pol/(std::stod(argv[3])/pow(2.0,11)); //2 to the power of 11, because there's been 11 halftimes before expire
+	double pol_at_EXPIRE = sum_of_pol/(std::stod(argv[3])/pow(2.0,std::stod(argv[7]))); //2 to the power of 11, because there's been 11 halftimes before expire
 	
 	cout << "Polution at EOS: " << pol_at_EOS << endl;
 	cout << "Polution at Expire: " << pol_at_EXPIRE << endl;
@@ -361,8 +365,14 @@ Below: Number of arguments and print them to screen
     	/*reportfile.precision(2);
 		reportfile << scientific;*/
 		reportfile << "Aktivitet ved EOS [Bq]: " << std::stod(argv[3]) << "\n \n" << endl;
+		reportfile << fixed;
+		reportfile << "Produktets udløb er sat til: " << std::stod(argv[7]) << " halveringer og har en holdbarhed af: " << std::stod(argv[7]) * std::stod(argv[8]) / 60.0 << " timer" << endl;
+		reportfile.precision(2);
+		reportfile << scientific;
 		reportfile << "Urenheder udgør af produktet:        	" << pol_at_EOS*100 << "% ved EOS" << endl;
 		reportfile << "                                     	" << pol_at_EXPIRE*100 << "% ved produktets udløb \n \n" << endl;
+		reportfile.precision(8);
+		reportfile << fixed;
 		reportfile << "Den nuklidiske renhed af produktet er:	" << 100- pol_at_EOS*100 << "% ved EOS" << endl;
 		reportfile << "                                      	" << 100-pol_at_EXPIRE*100 << "% ved produktets udløb\n \n" << endl;
     	reportfile << "<b>Kravet for godkendelse er en nuklidisk renhed større end 99.9 %</b> \n" << endl;
