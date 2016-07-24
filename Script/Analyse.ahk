@@ -233,12 +233,10 @@ FileAppend,
 (
 <font size="7" color="Black">Analysedata for Batch: %BatchNr%</font>
 
-EOS: %ReadableTime%
-EOS aktivitet for hele batch: %TempEOSBq% GBq
-Prøvestørrelse: %TempSizeOfSample% mL
-Total mængde i batch: %TempSizeOfBatch% mL
-Prøve analyseret: %Date%
-Prøve målt og analyseret af: %Initials%
+EOS: %ReadableTime% `t `t `t EOS aktivitet for hele batch: %TempEOSBq% GBq
+Prøvestørrelse: %TempSizeOfSample% mL `t `t `t `t `t Total mængde i batch: %TempSizeOfBatch% mL
+Prøve analyseret: %Date% `t Prøve målt og analyseret af: %Initials%
+
 
 
 ), C:\kemi\%FileName%part1.txt
@@ -376,6 +374,7 @@ Loop, read, C:\kemi\%FileName%.txt, C:\kemi\TimeSinceEOS.txt
 {
 	IfInString, A_LoopReadLine, %string1%
 	{
+		TimeSinceEOS = %EndOfMes%
 		StringTrimLeft, test1, A_LoopReadLine, 37
 		StringTrimRight, timetoadd, test1, 10
 		;MsgBox Time to add in seconds: %timetoadd%
@@ -384,10 +383,13 @@ Loop, read, C:\kemi\%FileName%.txt, C:\kemi\TimeSinceEOS.txt
 		EnvAdd, EndOfMes, %timetoadd%, seconds
 		;MsgBox EndOfMes after added seconds: %EndOfMes%
 		
-		TimeSinceEOS = %EndOfMes%
-		EnvSub, TimeSinceEOS, %EOS%, hours 
+		
+		EnvSub, TimeSinceEOS, %EOS%, minutes
+		;ekstra := EnvSub, TimeSinceEOS, %EOS%, minutes
+		TimeSinceEOS := TimeSinceEOS / 60 
 		
 		;MsgBox TimeSinceEOS: %TimeSinceEOS%
+		;FileAppend, Ekstra: %ekstra%`n
 		FileAppend, EOS: %EOS%`n
 		FileAppend, Slut for maaling: %EndOfMes%`n
 		FileAppend, Tid siden EOS(Timer): %TimeSinceEOS%`n

@@ -352,8 +352,9 @@ Loop, read, C:\kemi\%FileName%.txt, C:\kemi\TimeSinceEOS.txt
 		EndOfMes += %timetoadd%, seconds
 		;OLD: TimeSinceEOS := %EndOfMes%
 		TimeSinceEOS = %EndOfMes%
-		EnvSub, TimeSinceEOS, %EOS%, hours 
-		
+		EnvSub, TimeSinceEOS, %EOS%, minutes 
+		TimeSinceEOS := TimeSinceEOS / 60
+
 		;Udkommenter det nedenunder for at få tid siden måling start i timer skrevet til fil: tidsleg
 		FileAppend, EOS: %EOS%`n
 		FileAppend, Slut for maaling: %EndOfMes%`n

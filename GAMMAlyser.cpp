@@ -358,13 +358,16 @@ int main(int argc, char *argv[])
   	 {
     	reportfile << "<pre>" << endl;
     	reportfile << "<font size=\"7\" color=\"black\">Resultat data</font>" << endl;
-    	reportfile << "Tid siden EOS: 		" << argv[2] << " timer";
-		reportfile.precision(2);
+    	reportfile.precision(2);
+    	reportfile << fixed;
+    	double timer = std::stod(argv[2]);
+		reportfile << "Tid siden EOS: 		" << std::stod(argv[2]) << " timer";
+		//reportfile << "Tid siden EOS: 		" << timer << " timer";
 		reportfile << scientific;
 		reportfile <<  "		Sum af urenheder [Bq]: " << scientific <<  sum_of_pol << endl;
     	/*reportfile.precision(2);
 		reportfile << scientific;*/
-		reportfile << "Aktivitet ved EOS [Bq]: " << std::stod(argv[3]) << "\n \n" << endl;
+		reportfile << "Aktivitet af målt prøve ved EOS [Bq]: " << std::stod(argv[3]) << "\n \n" << endl;
 		reportfile << fixed;
 		reportfile << "Produktets udløb er sat til: " << std::stod(argv[7]) << " halveringer og har en holdbarhed af: " << std::stod(argv[7]) * std::stod(argv[8]) / 60.0 << " timer" << endl;
 		reportfile.precision(2);
