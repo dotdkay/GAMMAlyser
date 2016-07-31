@@ -17,7 +17,7 @@ Gui, Add, Text,, Nuclide:
 Gui, Add, Edit, vInitials ym  ; The ym option starts a new column of controls.
 Gui, Add, Edit, vDate
 Gui, Add, Edit, vBatchNr
-Gui, Add, DateTime, vEOS, dddd d, MMMM yyyy hh:mm:ss 
+Gui, Add, DateTime, vEOS, dddd d, MMMM yyyy HH:mm:ss 
 Gui, Add, Edit, vTempSizeOfSample
 Gui, Add, Edit, vTempSizeOfBatch
 Gui, Add, Edit, vTempEOSBq
@@ -159,6 +159,20 @@ Sleep 1000
 Click 520,401
 Sleep 2000
 
+;Saet scale til auto og til log
+Send !+D
+Sleep 2000
+Send D
+Sleep 2000
+Send A
+Sleep 2000
+Send !+D
+Sleep 2000
+Send D
+Sleep 2000
+Send G
+Sleep 2000
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;Timestamp for start for måling
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -272,25 +286,36 @@ string6 = ****************************
 string7 = I N T E R F E R E N C E
 writerestoffile = 0
 
+;Byg part1 filen
+;æøå
 FileAppend, <pre>`n, C:\kemi\%FileName%part1.txt
 
 FileAppend,
 (
-Initials: %Initials%
-Date: %Date%
-Batch-nr: %BatchNr%
-EOS: %EOS%
-EOS Activity: %EOSBq%
+<font size="7" color="Black">Analysedata for Batch: %BatchNr%</font>
 
+EOS: %ReadableTime% `t `t `t EOS aktivitet for hele batch: %TempEOSBq% GBq
+Prøvestørrelse: %TempSizeOfSample% mL `t `t `t `t `t Total mængde i batch: %TempSizeOfBatch% mL
+Prøve analyseret: %Date% `t Prøve målt og analyseret af: %Initials%
+
+
+
+), C:\kemi\%FileName%part1.txt
+FileAppend, </pre>`n, C:\kemi\%FileName%part1.txt
+
+;Byg part2 filen
+FileAppend, <pre>`n, C:\kemi\%FileName%part2.txt
+FileAppend,
+(
 <img src="c:\kemi\%FileName%.jpg" alt="">
 
 *************************************************************************
 *****            AUTOMATIC GAMMA ACQUISITION REPORT                 *****
 *************************************************************************
 
-), C:\kemi\%FileName%part1.txt
+), C:\kemi\%FileName%part2.txt
 
-Loop, read, C:\kemi\%FileName%.txt, C:\kemi\%FileName%part1.txt
+Loop, read, C:\kemi\%FileName%.txt, C:\kemi\%FileName%part2.txt
 {
     IfInString, A_LoopReadLine, %string2%
 	{
@@ -323,11 +348,77 @@ Loop, read, C:\kemi\%FileName%.txt, C:\kemi\%FileName%part1.txt
 	lastline = %A_LoopReadLine%
 }
 
-FileAppend, Rapport godkendt af (Dato og signatur):`n, C:\kemi\%FileName%part2.txt
+
+;FileAppend, Rapport godkendt af (Dato og signatur):`n, C:\kemi\%FileName%part2.txt
 FileAppend, `n, C:\kemi\%FileName%part2.txt
 FileAppend, `n, C:\kemi\%FileName%part2.txt
 FileAppend, `n, C:\kemi\%FileName%part2.txt
 FileAppend, </pre>`n, C:\kemi\%FileName%part2.txt
+
+string1 = Acquisition Started
+
+
+;Kig efter overstående string1 i filen: C:\kemi\%FileName%.txt, skr derefter alle delene ud af linien
+;og smid derefter samlet i en YYYYMMDDHHMISS variabel
+Loop, read, C:\kemi\%FileName%.txt, C:\kemi\%FileName%partEOS.txt
+{
+	IfInString, A_LoopReadLine, %string1%
+	{
+		StringTrimLeft, test1, A_LoopReadLine, 40
+		;MsgBox %test1%
+		
+		StringTrimRight, timetoadd, test1, 12
+		
+		EOSYear = 20%timetoadd%
+		;MsgBox %EOSYear%
+		
+		StringTrimLeft, test1, A_LoopReadLine, 37
+		;MsgBox %test1%
+		
+		StringTrimRight, timetoadd, test1, 15
+		
+		EOSMonth = %timetoadd%
+		;MsgBox %Month%
+		
+		
+		StringTrimLeft, test1, A_LoopReadLine, 34
+		;MsgBox %test1%
+		
+		StringTrimRight, timetoadd, test1, 18
+		
+		EOSDay = %timetoadd%
+		;MsgBox %EOSDay%
+		
+		StringTrimLeft, test1, A_LoopReadLine, 43
+		;MsgBox %test1%
+		
+		StringTrimRight, timetoadd, test1, 9
+		
+		EOSHours = %timetoadd%
+		;MsgBox %EOSHours%
+		
+		StringTrimLeft, test1, A_LoopReadLine, 46
+		;MsgBox %test1%
+		
+		StringTrimRight, timetoadd, test1, 6
+		
+		EOSMinutes = %timetoadd%
+		;MsgBox %EOSMinutes%
+		
+		StringTrimLeft, test1, A_LoopReadLine, 49
+		;MsgBox %test1%
+		
+		StringTrimRight, timetoadd, test1, 3
+		
+		EOSSeconds = %timetoadd%
+		;MsgBox %EOSSeconds%
+		
+		;YYYYMMDDHHMISS
+		StartOfMes = %EOSYear%%EOSMonth%%EOSDay%%EOSHours%%EOSMinutes%%EOSSeconds%
+		;MsgBox %StartOfMes%
+		break
+	}
+}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;Læg realtime til tidspunkt for start af måling
@@ -336,30 +427,33 @@ FileAppend, </pre>`n, C:\kemi\%FileName%part2.txt
 string1 = Real Time
 
 	   
-;OLD: EndOfMes := %MesStarted%
-EndOfMes = %MesStarted%
-;TimeSinceEOS
+EndOfMes = %StartOfMes%
+
 Loop, read, C:\kemi\%FileName%.txt, C:\kemi\TimeSinceEOS.txt
 {
-	;IfInString, A_LoopReadLine, %string1%, FileAppend, %A_LoopReadLine%`n
-	
 	IfInString, A_LoopReadLine, %string1%
 	{
+		TimeSinceEOS = %EndOfMes%
 		StringTrimLeft, test1, A_LoopReadLine, 37
 		StringTrimRight, timetoadd, test1, 10
+		;MsgBox Time to add in seconds: %timetoadd%
+		;MsgBox Value of EndOfMes: %EndOfMes%
+		;EndOfMes += %timetoadd%, seconds
+		EnvAdd, EndOfMes, %timetoadd%, seconds
+		;MsgBox EndOfMes after added seconds: %EndOfMes%
 		
 		
-		EndOfMes += %timetoadd%, seconds
-		;OLD: TimeSinceEOS := %EndOfMes%
-		TimeSinceEOS = %EndOfMes%
-		EnvSub, TimeSinceEOS, %EOS%, minutes 
-		TimeSinceEOS := TimeSinceEOS / 60
-
-		;Udkommenter det nedenunder for at få tid siden måling start i timer skrevet til fil: tidsleg
+		EnvSub, TimeSinceEOS, %EOS%, minutes
+		;ekstra := EnvSub, TimeSinceEOS, %EOS%, minutes
+		TimeSinceEOS := TimeSinceEOS / 60 
+		
+		;MsgBox TimeSinceEOS: %TimeSinceEOS%
+		;FileAppend, Ekstra: %ekstra%`n
 		FileAppend, EOS: %EOS%`n
 		FileAppend, Slut for maaling: %EndOfMes%`n
 		FileAppend, Tid siden EOS(Timer): %TimeSinceEOS%`n
-		
+		FileAppend, StartOfMes: %StartOfMes%`n
+		break
 	}
 	
 }
@@ -370,7 +464,7 @@ If NuclideChoice = 18F
 	Sleep 6000
 	Send #r
 	Sleep 1000
-	Send C:\GAMMAlyser\GAMMAlyser.exe C:\kemi\%FileName%part2.txt %TimeSinceEOS% %EOSBq% 1 1 isotopes-18F.txt 6 109.7
+	Send C:\GAMMAlyser\GAMMAlyser.exe C:\kemi\%FileName%part2.txt %TimeSinceEOS% %EOSBq% 1 0 isotopes-18F.txt 6 109.7
 	Sleep 6000
 	Send {Enter}
 	Sleep 12000
@@ -380,7 +474,7 @@ else if NuclideChoice = 11C
 	Sleep 6000
 	Send #r
 	Sleep 1000
-	Send C:\GAMMAlyser\GAMMAlyser.exe C:\kemi\%FileName%part2.txt %TimeSinceEOS% %EOSBq% 1 1 isotopes-18F.txt 3 20.5
+	Send C:\GAMMAlyser\GAMMAlyser.exe C:\kemi\%FileName%part2.txt %TimeSinceEOS% %EOSBq% 1 0 isotopes-18F.txt 3 20.5
 	Sleep 6000
 	Send {Enter}
 	Sleep 12000
@@ -390,7 +484,7 @@ else if NuclideChoice = 68Ga
 	Sleep 6000
 	Send #r
 	Sleep 1000
-	Send C:\GAMMAlyser\GAMMAlyser.exe C:\kemi\%FileName%part2.txt %TimeSinceEOS% %EOSBq% 1 1 isotopes-18F.txt 5 68
+	Send C:\GAMMAlyser\GAMMAlyser.exe C:\kemi\%FileName%part2.txt %TimeSinceEOS% %EOSBq% 1 0 isotopes-18F.txt 5 68
 	Sleep 6000
 	Send {Enter}
 	Sleep 12000
@@ -403,7 +497,7 @@ Send cmd
 Sleep 3000
 Send {Enter}
 Sleep 2000
-Send copy C:\kemi\cnuclide-report.txt{+}C:\kemi\%FileName%part1.txt{+}C:\kemi\%FileName%part2.txt C:\kemi\%FileName%report.html
+Send copy C:\kemi\%FileName%part1.txt{+}C:\kemi\cnuclide-report.txt{+}C:\kemi\%FileName%part2.txt C:\kemi\%FileName%report.html
 Sleep 3000
 Send {Enter}
 Sleep 3000

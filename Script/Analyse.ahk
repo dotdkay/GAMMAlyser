@@ -144,6 +144,20 @@ Sleep 2000
 Send D
 Sleep 2000
 
+;Saet scale til auto og til log
+Send !+D
+Sleep 2000
+Send D
+Sleep 2000
+Send A
+Sleep 2000
+Send !+D
+Sleep 2000
+Send D
+Sleep 2000
+Send G
+Sleep 2000
+
 ;Koer sekvens, her vaegles den rette sekvens udfra valget i starten
 If NuclideChoice = 18F
 {
@@ -233,9 +247,9 @@ FileAppend,
 (
 <font size="7" color="Black">Analysedata for Batch: %BatchNr%</font>
 
-EOS: %ReadableTime% `t `t `t EOS aktivitet for hele batch: %TempEOSBq% GBq
-Prøvestørrelse: %TempSizeOfSample% mL `t `t `t `t `t Total mængde i batch: %TempSizeOfBatch% mL
-Prøve analyseret: %Date% `t Prøve målt og analyseret af: %Initials%
+EOS: <b>%ReadableTime%</b> `t `t `t EOS aktivitet for hele batch: <b>%TempEOSBq% GBq</b>
+Prøvestørrelse: <b>%TempSizeOfSample% mL</b>`t `t `t `t Total mængde i batch: <b>%TempSizeOfBatch% mL</b>
+Prøve analyseret: <b>%Date%</b> `t Prøve målt og analyseret af: <b>%Initials%</b>
 
 
 
@@ -405,7 +419,7 @@ If NuclideChoice = 18F
 	Sleep 6000
 	Send #r
 	Sleep 1000
-	Send C:\GAMMAlyser\GAMMAlyser.exe C:\kemi\%FileName%part2.txt %TimeSinceEOS% %EOSBq% 1 1 isotopes-18F.txt 6 109.7
+	Send C:\GAMMAlyser\GAMMAlyser.exe C:\kemi\%FileName%part2.txt %TimeSinceEOS% %EOSBq% 1 0 isotopes-18F.txt 6 109.7
 	Sleep 6000
 	Send {Enter}
 	Sleep 12000
@@ -415,7 +429,7 @@ else if NuclideChoice = 11C
 	Sleep 6000
 	Send #r
 	Sleep 1000
-	Send C:\GAMMAlyser\GAMMAlyser.exe C:\kemi\%FileName%part2.txt %TimeSinceEOS% %EOSBq% 1 1 isotopes-18F.txt 3 20.5
+	Send C:\GAMMAlyser\GAMMAlyser.exe C:\kemi\%FileName%part2.txt %TimeSinceEOS% %EOSBq% 1 0 isotopes-18F.txt 3 20.5
 	Sleep 6000
 	Send {Enter}
 	Sleep 12000
@@ -425,13 +439,11 @@ else if NuclideChoice = 68Ga
 	Sleep 6000
 	Send #r
 	Sleep 1000
-	Send C:\GAMMAlyser\GAMMAlyser.exe C:\kemi\%FileName%part2.txt %TimeSinceEOS% %EOSBq% 1 1 isotopes-18F.txt 5 68
+	Send C:\GAMMAlyser\GAMMAlyser.exe C:\kemi\%FileName%part2.txt %TimeSinceEOS% %EOSBq% 1 0 isotopes-18F.txt 5 68
 	Sleep 6000
 	Send {Enter}
 	Sleep 12000
 }
-
-
 
 Sleep 6000
 Send #r
